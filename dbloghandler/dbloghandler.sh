@@ -1,6 +1,5 @@
 #!/bin/bash
-
-#datimenow=`date +%y%m%d%H%M`
+#@version 0.1
 
 logpwd=/var/log/mislog/
 [ ! -d $logpwd ] && mkdir $logpwd
@@ -13,5 +12,5 @@ logline=$[${#log_1[@]}-1]
 
 for i in `seq 0 $logline`
 do
-echo -e "\t$[${log_1[$i]}-${log_2[$i]}] \t${log_0[$i]} "
+echo -e " \t${log_1[$i]} \t${log_2[$i]} \t$[${log_1[$i]}-${log_2[$i]}] \t${log_0[$i]}"
 done
