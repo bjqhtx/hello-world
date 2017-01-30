@@ -27,11 +27,25 @@ sh /usr/local/TrackAnalyser/bin/TrackAnalyser.sh start;sh /usr/local/OutCar_Trac
 # /usr/local/tomcat/webapps/orderservice/WEB-INF/log
 
 
-### service_10_8
+### service_10_8/6
 # IP 10.xxx.xxx.8    
 # status : allright
 # frequency ： 4h
 # /usr/local/zddp/log   per 2m
 # /usr/local/TrackAnalyser/log     per 1m
 # /usr/local/apache-tomcat-7.0.53/logs     per 4h
+# 
+# IP 10.xxx.xxx.6
+# status : allright
+# frequency : 4h
+# /opt/oracle/product/10.2.0/db_1/admin/orcl/bdump/alert_orcl.log    per 4h
+
+
+### service_10_129
+# IP
+# status : allright
+# frequency
+
+
+
 
