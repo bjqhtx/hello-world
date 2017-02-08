@@ -3,7 +3,7 @@
 #@author qh
 
 logpwd=/var/log/mislog/
-[ ! -d $logpwd ] && mkdir $logpwd
+[ ! -d $logpwd ] && mkdir -p $logpwd
 
 log_1=(`cat $logpwd$1 |awk -F '.' '{print $1}' `)
 log_2=(`cat $logpwd$2 |awk -F '.' '{print $1}' `)
