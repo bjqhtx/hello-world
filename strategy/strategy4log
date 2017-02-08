@@ -1,3 +1,5 @@
+﻿
+
 ### serveic_209 
 # IP 209  
 # status : restart_regularly : when last AP > 4hours 
@@ -8,17 +10,30 @@ ps aux |grep -v grep |grep -v tailf |grep -v restart |grep TraceDouble |awk '{pr
 
 ### service_200
 # 
+#
 
 ### service_123_241
 # IP 123.xxx.xxx.241    
 # status : restart_regularly : need restart often   
-# frequency ： 1m
-# /usr/local/TrackAnalyser/log     
-# /usr/local/OutCar_TrackAnalyser/log/TrackAnalyser.log    
-# /usr/local/AreaMonitor_TrackAnalyser/log/TrackAnalyser.log      
+# frequency ： 10m
+# /usr/local/TrackAnalyser/log/TrackAnalyser.log                       per 10m
+# cat /usr/local/TrackAnalyser/log/TrackAnalyser.log | awk '{print $2}' | awk -F: '{print $1}' |sort |uniq -c 
+#
+# /usr/local/OutCar_TrackAnalyser/log/TrackAnalyser.log      sonmtimes
+# cat /usr/local/OutCar_TrackAnalyser/log/TrackAnalyser.log | awk '{print $1}' |sort |uniq -c | sort -nr 
+#
+# /usr/local/AreaMonitor_TrackAnalyser/log/TrackAnalyser.log          increasing
+# tail -5000 /usr/local/AreaMonitor_TrackAnalyser/log/TrackAnalyser.log | awk  '{print $1}' |uniq -c | grep `date "+%F"`
+#
 # c4r    sh@/root/auto/restart_service.sh    need restart 
 ps aux |grep -v grep |grep -v TTSMind |grep "TrackAnalyser" |awk '{print $2}' |xargs kill
 sh /usr/local/TrackAnalyser/bin/TrackAnalyser.sh start;sh /usr/local/OutCar_TrackAnalyser/bin/TrackAnalyser.sh start;sh /usr/local/AreaMonitor_TrackAnalyser/bin/TrackAnalyser.sh start
+
+
+
+
+
+
 
 ### service_104
 # IP 104
